@@ -15,8 +15,8 @@ http://npmjs.org/
 Installation
 ==
 
-	git clone https://github.com/rockitbaby/love-node.git
-	cd love-node
+	git clone https://github.com/rockitbaby/love-node.js.git
+	cd love-node.js/
 
 Then use npm to automatically install dependencies
 
