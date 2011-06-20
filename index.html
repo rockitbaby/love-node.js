@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de-DE">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>#love</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script src="/client/socket.io.js"></script>
+	<script>
+	(function($) {
+		$(document).ready(function() {
+			var nTweets = 0;
+			var socket = new io.Socket(null, {rememberTransport: false, port: 7777});
+			var $tweets = $('#tweets');
+			var $count = $('#count');
+			socket.on('message', function(data) {
+				nTweets++;
+				$tweets.prepend('<p><strong>' + data.tweet.user.name + '</strong>: ' + data.tweet.text.replace(/love/ig, '<span style="color:#F00">&hearts;</span>') + '</p>');
+				$count.text(nTweets);
+			});
+			socket.connect();
+		});
+	}(jQuery));
+	</script>
+	<style type="text/css">
+		body { font-family: monospace; margin: 50px auto; width: 600px; overflow: hidden;}
+		h1 { border-bottom: 4px solid #000; padding-bottom: 40px; margin: 40px auto; width: 200px; text-align: center; }
+	</style>
+</head>
+<body>
+	<h1><span style="color:#F00">&hearts;</span><br><span id="count"></span></h1>
+	<div id="tweets"></div>
+</body>
+</html>
