@@ -38,25 +38,31 @@ Configuration
 
 The directory structure should be
 
-love-node
-- logs
-- node_modules
+- love-node
+-- logs
+-- node_modules
 
 open index.js and add your
-TWITTER_USERNAME
-TWITTER_PASSWORD
+
+```js
+, TWITTER_USERNAME = 'rockitbaby'
+, TWITTER_PASSWORD = '...'
+, TWITTER_HASHTAG = 'love'
+```
 
 you may also want to change the TWITTER_HASHTAG you want to observe
 
 Then
-run app/server.sh start
 
-the open a webbrowser http://localhost:7777
+	run app/server.sh start
+
+and open a webbrowser http://localhost:7777
 
 Tested
 ==
-Chrome 12.++
-Firefox 4.0.1
-Safari 5.0.5
 
-all on OS X 10.6
+- Chrome 12.++
+- Firefox 4.0.1
+- Safari 5.0.5
+
+(all on OS X 10.6)
